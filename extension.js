@@ -1,4 +1,6 @@
 const vscode = require('vscode');
+const player = require('play-sound')({ player: 'afplay' }); // Change 'afplay' to your preferred audio player
+const path = require('path');
 
 let alarmInterval;
 let alarmTime;
@@ -62,6 +64,14 @@ function checkAlarm() {
   if (alarmTime && now.getHours() === alarmTime.getHours() && now.getMinutes() === alarmTime.getMinutes()) {
     clearInterval(alarmIntervalId);
     vscode.window.showInformationMessage('Time to wake up! Alarm is ringing.');
+
+    // Play the sound when the alarm time is reached
+    const soundPath = path.join(__dirname, './BestAlarm.mp3'); // Change this to the path of your audio file
+    player.play(soundPath, (err) => {
+      if (err) {
+        console.error('Error playing sound:', err);
+      }
+    });
   }
 }
 
