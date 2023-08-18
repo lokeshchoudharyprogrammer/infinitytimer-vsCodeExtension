@@ -1,0 +1,43 @@
+{
+  "name": "infinitytimer",
+  "displayName": "infinitytimer",
+  "description": "Show World Current Time ",
+  "version": "0.0.2",
+  "publisher": "LokeshChoudhary",
+  "description": "Infinity Timer is a Visual Studio Code extension that adds a dynamic and continuously updating date and time display to the status bar.",
+  "icon": "timers.jpg",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": "https://github.com/lokeshchoudharyprogrammer",
+  "pricing": "Free",
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "alarmclock.setAlarm",
+        "title": "Set Alarm"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "@vscode/test-electron": "^2.3.2"
+  }
+}
